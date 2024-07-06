@@ -1,0 +1,245 @@
+body{
+    font-family: "poppins",sans-serif;
+
+    background-color: black;
+    color: white;
+}
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            user-select: none;
+
+            position: absolute;
+            z-index: 100;
+            display: flex;
+            backdrop-filter: blur(12px);
+            width: 97%;
+
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px;
+      
+        
+        }
+       header ul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+
+        }
+        ul li{
+            cursor: pointer;
+            transition: 0.3s ease;
+
+            list-style: none;
+            padding: 12px;
+        }
+        .list.active{
+            background-color: wheat;
+            color: black;
+            transition: 0.4s;
+        }
+        
+       
+        .search i{
+            font-size: 25px;
+        }
+     
+        .logo h1{
+    font-family: "poppins",sans-serif;
+    font-weight: 2000;
+}
+
+.slider{
+    user-select: none;
+
+    height: 100vh;
+    position: relative;
+   top: 0;
+
+}
+ .item{
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+
+    transition: 0.7s ease;
+}
+.slider .item img {
+    object-fit:cover;
+    height: 100vh;
+    width: 100%;
+}
+/* .item::after{
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+        to top,#000000fe 30%, #56404000
+    )
+} */
+.contents{
+    
+    text-transform: capitalize;
+    position: absolute;
+    top: 8%;
+    margin: 100px;
+    z-index: 1;
+}
+.contents p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+.contents h2{
+    font-size: 5rem;
+}
+.item.active{
+    opacity: 1;
+    z-index: 10;
+}
+ @keyframes showContent{
+    to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+
+    }
+
+}
+
+.active p:nth-child(1), 
+.active h2 ,
+.active p:nth-child(3){
+    transform: translateY(-30px);
+    filter: blur(20px);
+    animation: showContent .5s .7s ease-out 1 forwards;
+} 
+
+
+.item.active p:nth-child(1){
+    animation-delay :.9s;
+}
+.active h2{
+    animation-delay :.7s;
+}
+.active p:nth-child(3){
+    animation-delay :.5s;
+}
+.arrows{
+    position: absolute;
+    top: 30%;
+    z-index: 100;
+    right: 0;
+
+}
+.arrows button{
+    font-weight: bolder;
+    transition: 0.3s ease-out;
+    font-size: 20px;
+    padding: 17px;
+    background-color: rgba(0, 0, 0, 0.293);
+    color: white;
+    border: none;
+}
+.arrows button:hover{
+    background-color: rgba(255, 255, 255, 0.476) ;
+    color: black;
+    cursor: pointer;
+}
+
+
+.thumbnail{
+    position: absolute;
+    bottom: 10px;
+    z-index: 11;
+    gap: 10px;
+    width: 100%;
+    height:350px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+
+}
+.thumbnail::-webkit-scrollbar{
+    width: 0;
+}
+ .items{
+  
+
+    padding: 8px;
+    height: 300px;
+    width: 250px;
+    filter: brightness(0.5);
+    transition: .5s;
+    flex-shrink: 0;
+}
+.items img{
+    cursor:-webkit-grab;
+    user-select: none;
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ border-radius: 8px;
+
+}
+.items.actives{
+    filter: brightness(1.5);
+    cursor: pointer;
+}
+
+@media screen and (max-width:656px){
+    header{
+        font-size: 12px;
+    }
+ 
+  
+
+    .contents{
+        
+        margin: 50px;
+        font-size: 12px;
+    }
+ 
+.contents h2{
+    font-size: 1.5rem;
+}
+.arrows{
+    top: 270px;
+    margin-right:20px;
+}
+.arrows button{
+  
+    font-size: 12px;
+    
+
+}
+.slider{
+    width: 103%;
+}
+.thumbnail{
+    /* /this is important to learn    justify-content: start;   */
+    justify-content: start;  
+    bottom: 100px;
+    padding:12px ;
+    height: 220px;
+}
+
+.items {
+
+    height: 100px;
+    width: 150px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.cont p {
+    font-size: 12px;
+}
+}
